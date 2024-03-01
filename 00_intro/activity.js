@@ -11,3 +11,4 @@ console.log(precio)
 console.log(nombreDeSerie)
 console.log(peliculas)
 
+

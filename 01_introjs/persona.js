@@ -13,15 +13,18 @@ class Persona {
     Persona.cantidadUsuarios++;
   }
   comer(cantidad) {
-    this.vida < 150 ? (this.vida = this.vida + cantidad) : console.log("NO PUEDES SEGUIR COMIENDO")
+    this.vida = this.vida + cantidad  <= 150 ? (this.vida + cantidad)
+      : (console.log("Ya completaste tu nivel máximo de vida"), 150)  
+    }
+  
     
-  }
   entrenar(cantidad) {
     this.vida = this.vida - cantidad;
   }
   mudarse(ciudad) {
     this.ciudad = ciudad;
     this.vida = this.vida - 20;
+    console.log("Me mudé y gasté 20 de vida");
   }
 
   // imprimirDatos = ()=> console.log(`Se llama ${this.nombre} y tiene ${this,edad}`)
@@ -32,25 +35,12 @@ const persona2 = new Persona("Martín", 48, "Baradero", 120);
 const persona3 = new Persona("Juan", 40, "Escobar", 110);
 const persona4 = new Persona("Juliana", 32, "CABA", 110);
 
-console.log(persona1)
-persona1.comer(5);
-console.log(persona1)
+console.log(persona1);
+persona1.comer(25);
+console.log(persona1);
+persona1.comer(25);
+console.log(persona1);
 persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-persona1.comer(15);
-console.log(persona1)
-// console.log(persona1)
-// console.log(persona2)
-// console.log(persona3.nombre)
-// console.log(persona4)
-// console.log(`Cantidad de registros:${Persona.cantidadUsuarios} `)
+console.log(persona1);
+persona1.mudarse("Elche");
+console.log(persona1);

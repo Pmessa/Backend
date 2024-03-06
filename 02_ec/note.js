@@ -1,19 +1,34 @@
 class NotesManager {
   static quantity = 0;
   static #notes = [];
-  crate(data) {
-    data.id =
-      NotesManager.quantity.lenth === 0
-        ? 1
-        : NotesManager.#notes[NotesManager.#notes.length - 1].id + 1;
-    data.type ? data.type : "to do";
-    data.date || new Date();
-    !data.text ? `ingrese texto` : NotesManager.#notes.push(data);
-    NotesManager.#notes.push(data);
-    NotesManager.quantity + 1;
+  create(data) {
+    const note = {
+      id:
+        NotesManager.quantity === 0
+          ? 1
+          : NotesManager.#notes[NotesManager.quantity - 1].id + 1,
+          type: data.type || "to do",
+          date: data.date || new Date(),
+          text: data.text,
+        };
+        
+        
+        
+        !data.text
+        ? console.log(`COMPLETE EL TEXTO DE LA NOTA, 
+        ESTA NOTA ESTÁ VACÍA`)
+        : NotesManager.#notes.push(note) && NotesManager.quantity ++;
+ 
+  }
+  read() {
+    return NotesManager.#notes;
   }
 }
 
 const notes = new NotesManager();
-notes.create({ text: `mi primera nota` });
-console.log(notes.read({}));
+notes.create({ text: `primera nota` });
+notes.create({ text: `segunda nota` });
+notes.create({ text: `tercera nota` });
+notes.create({});
+
+console.log(notes.read());

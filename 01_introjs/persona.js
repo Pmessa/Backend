@@ -13,17 +13,20 @@ class Persona {
     Persona.cantidadUsuarios++;
   }
   comer(cantidad) {
+
     this.vida < 150
       ? (this.vida = this.vida + cantidad)
       : console.log("NO PUEDES SEGUIR COMIENDO");
   }
+
   entrenar(cantidad) {
     this.vida = this.vida - cantidad;
   }
   mudarse(ciudad) {
     this.ciudad = ciudad;
     this.vida = this.vida - 20;
-  }
+
+}
 
   // imprimirDatos = ()=> console.log(`Se llama ${this.nombre} y tiene ${this,edad}`)
 }
@@ -34,6 +37,7 @@ const persona3 = new Persona("Juan", 40, "Escobar", 110);
 const persona4 = new Persona("Juliana", 32, "CABA", 110);
 
 console.log(persona1);
+
 persona1.comer(5);
 console.log(persona1);
 persona1.comer(15);

@@ -14,10 +14,12 @@ class Persona {
   }
   comer(cantidad) {
 
+
     this.vida < 150
       ? (this.vida = this.vida + cantidad)
       : console.log("NO PUEDES SEGUIR COMIENDO");
   }
+
 
   entrenar(cantidad) {
     this.vida = this.vida - cantidad;
@@ -28,6 +30,7 @@ class Persona {
 
 }
 
+
   // imprimirDatos = ()=> console.log(`Se llama ${this.nombre} y tiene ${this,edad}`)
 }
 
@@ -37,7 +40,6 @@ const persona3 = new Persona("Juan", 40, "Escobar", 110);
 const persona4 = new Persona("Juliana", 32, "CABA", 110);
 
 console.log(persona1);
-
 persona1.comer(5);
 console.log(persona1);
 persona1.comer(15);
@@ -59,3 +61,13 @@ console.log(persona1);
 // console.log(persona3.nombre)
 // console.log(persona4)
 // console.log(`Cantidad de registros:${Persona.cantidadUsuarios} `)
+
+persona1.comer(25);
+console.log(persona1);
+persona1.comer(25);
+console.log(persona1);
+persona1.comer(15);
+console.log(persona1);
+persona1.mudarse("Elche");
+console.log(persona1);
+
